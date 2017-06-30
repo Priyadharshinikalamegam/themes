@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>dashboard</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2014',  1000,      400],
+          ['2015',  1170,      460],
+          ['2016',  660,       1120],
+          ['2017',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Popularity'],
+          ['Germany', 200],
+          ['United States', 300],
+          ['Brazil', 400],
+          ['Canada', 500],
+          ['France', 600],
+          ['RU', 700],
+        ['IN',700,]
+        ]);
+
+        var options = {};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Device', 'Usage'],
+          ['Android',     11],
+          ['IOS',      2],
+          ['Blackberry',  2],
+          [ 'Symbion', 2],
+          ['Others',    7]
+        ]);
+
+        var options = {
+          title: 'Device Usage',
+          pieHole: 0.4,
+
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawColColors);
+
+function drawColColors() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('timeofday', 'Time of Day');
+      data.addColumn('number', 'Student');
+      data.addColumn('number', 'Non-student');
+
+      data.addRows([
+        [{v: [8, 0, 0], f: '8 am'}, 4, 7.25],
+        [{v: [9, 0, 0], f: '9 am'}, 2, 1.5],
+        [{v: [10, 0, 0], f:'10 am'}, 3, 4],
+        [{v: [11, 0, 0], f: '11 am'}, 1, 2.25],
+        [{v: [12, 0, 0], f: '12 pm'}, 7, 1.25],
+        [{v: [13, 0, 0], f: '1 pm'}, 6, 3],
+        [{v: [14, 0, 0], f: '2 pm'}, 8, 4],
+        [{v: [15, 0, 0], f: '3 pm'}, 5, 5.25],
+        [{v: [16, 0, 0], f: '4 pm'}, 9, 7.5],
+        [{v: [17, 0, 0], f: '5 pm'}, 5.5,8.5],
+      ]);
+
+      var options = {
+        title: 'Active usage throughout the day',
+        colors: ['#9575cd', '#33ac71'],
+        hAxis: {
+          title: 'Time of Day',
+          format: 'h:mm a',
+          viewWindow: {
+            min: [7, 30, 0],
+            max: [17, 30, 0]
+          }
+        },
+        vAxis: {
+          title: 'Rating (scale of 1-10)'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+ </head>
+    <style>
+        .wrapper
+        {
+        margin-top: 80px;
+        }
+        .navbar
+        {
+            position:fixed;
+            width:100%;
+            z-index:1;
+            
+        }
+        body
+        {
+        font-family:"Open Sans","sans-serif";
+        font-size:16px;
+            background-color:beige;
+        }
+    .nav-side-menu {
+  overflow: auto;
+  font-family:"Open Sans","sans-serif";
+  font-size: 12px;
+  background-color:black;
+  position:fixed;
+        top:50px;
+        bottom:0px;
+  width:200px;
+  height: 100%;
+  color: #e1ffff;
+        z-index: 1;
+        }
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  background-color: #4f5b69;
+}
+
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  background-color: #4f5b69;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+    }
+
+    </style>
+    <body>
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-globe"></span></a>
+        </div>
+<ul class="nav navbar-nav">
+      <li class="active"><a href="#"></a></li>
+    </ul>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="profile1.html">PROFILE1</a></li>
+             <li><a href="profile2.html">PROFILE2</a></li>
+             <li><a href="profile3.html">PROFILE3</a></li>
+             <li><a href="profile4.html">PROFILE4</a></li>
+            <li> <a href="profile5.html">PROFILE5</a></li>
+            <li><a href="settings.html"><span class="glyphicon glyphicon-cog"></span> SETTINGS</a></li>
+            <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
+        </ul>
+      </li>
+    </ul>
+          </div></div></nav>
+        
+<div class="row">
+    <div class="col-md-2">
+<div class="nav-side-menu">
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+                <li class="active">
+                  <a href="dashboard.html">
+                  <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                  </a>
+                </li>
+
+                <li  data-toggle="collapse" data-target="#products" class="collapsed">
+                  <a href="#"><i class="fa fa-list fa-lg"></i>Report<span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li><a href="report1.html">Report1</a></li>
+                    <li><a href="report2.html">Report2</a></li>
+                    <li><a href="report3.html">Report3</a></li>
+                    <li><a href="report4.html">Report4</a></li>
+                    <li><a href="report5.html">Report5</a></li>
+                </ul>
+            </ul>
+     </div>
+</div>
+    </div>
+    
+    <div class="col-md-10">
+        <div class="wrapper">
+                <h3>MY Dashboard</h3></div>
+<hr>    <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder" style="text-align:center;">
+                <div class="panel panel-default">
+                <div class="panel-body">
+              <i class="fa fa-comments" style="font-size:60px;"></i>
+                <h4>Messages  52</h4>
+            </div></div></div>
+            <div class="col-xs-6 col-sm-3 placeholder"  style="text-align:center;">
+                <div class="panel panel-default">
+                <div class="panel-body">
+              <i class="fa fa-share-alt" style="font-size:60px;"></i>
+                <h4>Shares  102</h4></div></div></div>
+            <div class="col-xs-6 col-sm-3 placeholder"  style="text-align:center;">
+                <div class="panel panel-default">
+                <div class="panel-body">
+              <i class="fa fa-eye" style="font-size:60px;"></i>
+              <h4>Views  25</h4>
+            </div></div></div>
+            <div class="col-xs-6 col-sm-3 placeholder"  style="text-align:center;">
+                <div class="panel panel-default">
+                <div class="panel-body">
+              <i class="fa fa-users" style="font-size:60px;"></i>
+              <h4>Users  15</h4>
+            </div></div></div>
+        </div>
+        <hr>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+            <div class="panel-body">
+                <h4>Regions</h4>
+                <div id="regions_div" style="width:500px;height:300px;"></div></div></div>
+            </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+            <div class="panel-body">
+            <h4>Feeds</h4>
+            <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th><i class="fa fa-user" style="color:blue"></i></th>
+                <th>new record over 90 views</th>
+                <th>10 mins</th></tr>
+                <tr>
+                <th>
+                    <i class="fa fa-bell" style="color:red"></i></th>
+                    <th>database error</th>
+                <th>15mins</th></tr>
+                <tr>
+                <th><i class="fa fa-users " style="color:yellow"></i></th>
+                <th>new record over 40 users</th>
+                <th>17mins</th></tr>
+                <tr>
+                    <th><i class="fa fa-comments" style="color:red"></i></th>
+                    <th>new comments</th>
+                <th>25mins</th></tr>
+                <tr>
+                <th><i class="fa fa-bookmark" style="color:blue"></i></th>
+                <th> check transactions</th>
+                <th>28mins </th>
+                </tr>
+                <tr>
+                <th>
+                    <i class="fa fa-laptop" style="color:red"></i></th>
+                <th> cpu overload</th>
+                <th>35mins</th>
+                </tr>
+                <tr>
+                <th><i class="fa fa-share-alt" style="color:green"></i></th>
+                <th>new shares</th>
+                <th>
+                    39mins</th></tr></tbody></table>
+        
+                </div></div></div></div></div>
+        <hr>
+        <div class=" container">
+        <div class="row">
+            <div class=" col-md-12">
+            <div class="panel panel-default">
+                <div class=" panel-body">
+                 <div id="chart_div" style="width:1000px;height:500px;"></div></div></div></div></div></div>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div id="curve_chart" style="width: 500px; height: 500px">                    </div></div></div></div>
+        <div class="col-md-6">
+            <div class=" panel panel-default">
+            <div class="panel-body">
+                 <div id="donutchart" style="width: 500px; height: 500px;"></div>
+                </div></div></div></div></div>
+            <hr>
+            <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4>General Stats</h4>
+
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70"
+  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+New Visitors
+  </div></div><br>
+                <div class="progress">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="50"
+  aria-valuemin="0" aria-valuemax="100" style="width:50%">
+New Users
+  </div></div><br>
+                <div class="progress">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60"
+  aria-valuemin="0" aria-valuemax="100" style="width:60%">
+                            Bounce rate
+                    </div></div></div></div>
+                    </div>
+                </div></div>
+                <div class="container">
+                    <div class="panel panel-default">
+                <div class="panel-body">
+                <h4>Recent comments</h4>
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="https://www.w3schools.com/w3images/avatar3.png" alt="no image" class="img-circle" style="width:96px;height:96px;"></div>
+                    <div class="col-md-10">
+                    <h4>John</h4>
+                    <p>Keep up the good work</p></div></div>
+            <hr>
+            <div class="row">
+                    <div class="col-md-2">
+                <img src="https://www.w3schools.com/w3images/avatar2.png" alt="no image"
+                     class="img-circle" style="width:96px;height:96px;"></div>
+                    <div class="col-md-10">
+                <h4>Jane</h4>
+                        <p>In love with the services provided by you guys</p></div></div></div></div></div>
+<br>
+  
+</div></div>
+    
+    </body>
+</html>
