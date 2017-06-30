@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>profile2</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <style>
+        .wrapper
+        {
+ background-image:url("http://www.2iwebsitedesign.co.uk/wp-content/uploads/2013/09/image-03.jpg");
+            background-position:center;
+            background-size:cover;
+            height:250px;
+        }
+        img
+        {
+            width:200px;
+            height:200px;
+            padding:20px;
+        }
+    .container
+        {
+             font-family:"Open Sans","sans-serif";
+            font-size:16px;
+            margin-top:50px;
+        }
+        .navbar
+        {
+            position:fixed;
+            width:100%;
+            z-index:1;
+        }.nav-side-menu {
+  overflow: auto;
+  font-family: verdana;
+  font-size: 12px;
+  font-weight: 200;
+  background-color:black;
+  position:fixed;
+        top:50px;
+        bottom:0px;
+  width:200px;
+  height: 100%;
+  color: #e1ffff;
+        z-index: 1;
+        }
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  background-color: #4f5b69;
+}
+
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+    background-color: #020203;}
+        
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  background-color: #4f5b69;
+  transition: all 1s ease;
+}
+       .sub-menu li:active
+        {
+              background-color: #4f5b69;
+
+        }
+        @media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+    }
+    </style>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-globe"></span></a>
+        </div>
+<ul class="nav navbar-nav">
+      <li class="active"><a href="#"></a></li>
+    </ul>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="profile1.html">PROFILE1</a></li>
+             <li><a href="profile2.html">PROFILE2</a></li>
+             <li><a href="profile3.html">PROFILE3</a></li>
+             <li><a href="profile4.html">PROFILE4</a></li>
+            <li><a href="profile5.html">PROFILE5</a></li>
+                        <li><a href="settings.html"><span class="glyphicon glyphicon-cog"></span> SETTINGS</a></li>
+
+            <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
+        </ul>
+      </li>
+    </ul>
+          </div></div></nav>
+        <div class="row">
+        <div class="col-md-2">
+             <div class="nav-side-menu">
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+                <li class="text-left">
+                  <a href="dashboard.html">
+                  <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                  </a>
+                </li>
+
+                <li  data-toggle="collapse" data-target="#products" class="collapsed text-left ">
+                  <a href="#"><i class="fa fa-list fa-lg"></i>Report<span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li class="text-left"><a href="report1.html">Report1</a></li>
+                    <li class="text-left"><a href="report2.html">Report2</a></li>
+                    <li class="text-left"><a href="report3.html">Report3</a></li>
+                    <li class="text-left"><a href="report4.html">Report4</a></li>
+                    <li class="text-left"><a href="report5.html">Report5</a></li>
+                </ul>
+            </ul>
+     </div>
+</div></div><div class="col-md-10">
+    <div class="container">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="image.jpg" src="no image"></div>
+            <div class="col-md-10">
+                <h3>Priyadharshini Kalamegam</h3>
+                <p>Web Developer</p></div></div></div><br>
+        <div class="row">
+        <div class="col-md-4">
+           <ul class="list-group">
+              <li class="list-group-item text-muted"><b>Profile</b></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span>14/03/2016</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Last seen</strong></span> Yesterday</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span>Priyadharshini Kalamegam</li>
+            
+          </ul>  </div>
+        <div class="col-md-4">
+            <ul class="list-group">
+              <li class="list-group-item text-muted"><b>Activity</b> <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+          </ul></div>
+        <div class="col-md-4">
+           <div class="panel panel-default">
+              <div class="panel-heading"><b>Social Media</b></div>
+            <div class="panel-body">
+            	<i class="fa fa-facebook fa-2x"></i><i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
+            </div>
+          </div> <div class="panel panel-default">
+              <div class="panel-heading"><b>Website</b></div>
+            <div class="panel-body"><a href="http://www.kct.ac.in">kct.ac.in</a></div>
+          </div> </div></div>
+    <div class="row">
+                <div class=" col-md-6">
+                    <ul class="list-group">
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>First name:</strong></span>Priyadharshini</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>User name:</strong></span>Priyadharshini Kalamegam</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>City:</strong></span>Karur</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Birthday:</strong></span>04/11/1997</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>email-id:</strong></span>priyakalamegam@gmail.com</li>
+                    </ul></div>
+                <div class="col-md-6">
+                    <ul class="list-group">
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Last name:</strong></span>Kalamegam</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Web site:</strong></span>www.kct.ac.in</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>State:</strong></span>Tamilnadu</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Interests:</strong></span>Reading,Badmiton,Chess</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Phone:</strong></span>9994175256</li>
+                    </ul></div></div><br>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+         <h3><span class="glyphicon glyphicon-education"></span>Education</h3><br>
+                    <ul class="list">
+                    <li>B.E CS at Kumaraguru College Of Technology  (2015 ~ now)</li><hr>
+                        <li>12th at Green ParkMatric Hr Sec School  (2015)</li><hr>
+                        <li>10th at Cheran Matric Hr Sec School  (2013)</li></ul></div></div></div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+        <h3><span class="glyphicon glyphicon-scale"></span> Skill</h3><br>
+                    <div class="progress">
+  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70"
+  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+    Communication
+  </div>
+</div>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50"
+  aria-valuemin="0" aria-valuemax="100" style="width:50%">
+    Writing
+  </div>
+</div>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+  aria-valuemin="0" aria-valuemax="100" style="width:60%">
+    Presenting
+  </div>
+</div>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40"
+  aria-valuemin="0" aria-valuemax="100" style="width:40%">Technical
+    
+    </div></div></div></div></div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+         <h3><span class="glyphicon glyphicon-globe"></span> Activity</h3><br>
+                    <div class="table-responsive">
+                <table class="table table-hover">
+                  
+                  <tbody>
+                    <tr>
+                      <td> Today, 1:00 - Kiruthika liked your post.</td>
+                    </tr>
+                    <tr>
+                      <td>Today, 12:23 - Kalamegam liked and shared your post.</td>
+                    </tr>
+                    <tr>
+                      <td> Today, 12:20 - You posted a new blog entry title "Why social media is".</td>
+                    </tr>
+                    <tr>
+                      <td> Yesterday - Lakshmi liked your post.</td>
+                    </tr>
+                    <tr>
+                      <td> 2 Days Ago -Anish  liked your post.</td>
+                    </tr>
+                    <tr>
+                      <td>2 Days Ago - Ashwath liked your post.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                    </div></div></div></div></div></div>
+        </div></body>
+</html>
