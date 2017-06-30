@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>payment</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css">
+    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .navbar
+        {
+            position:fixed;
+            width:100%;
+            z-index:1;
+        }
+        .nav-side-menu {
+  overflow: auto;
+  font-size: 12px;
+  font-weight: 200;
+  background-color:black;
+  position:fixed;
+        top:50px;
+        bottom:0px;
+  width:200px;
+  height: 100%;
+  color: #e1ffff;
+        z-index: 1;
+        }
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+.nav-side-menu ul .active,
+.nav-side-menu li .active {
+  background-color: #4f5b69;
+}
+
+.nav-side-menu ul .sub-menu li,
+.nav-side-menu li .sub-menu li {
+  background-color: #181c20;
+  border: none;
+  line-height: 28px;
+  border-bottom: 1px solid #23282e;
+  margin-left: 0px;
+}
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color: #020203;
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+.nav-side-menu li {
+  padding-left: 0px;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e;
+}
+.nav-side-menu li a {
+  text-decoration: none;
+  color: #e1ffff;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  background-color: #4f5b69;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+    }
+.tabs-left {
+  border-bottom: none;
+    width:200px;
+}
+.tabs-left {
+  border-right: 1px solid #ddd;
+}
+.tabs-left>li {
+  float: none;
+  margin-bottom: 2px;
+}
+.tabs-left>li {
+  margin-right: -1px;
+}
+.tabs-left>li.active>a,
+.tabs-left>li.active>a:hover,
+.tabs-left>li.active>a:focus {
+  border-bottom-color: #ddd;
+}
+.tabs-left>li>a {
+  border-radius: 4px 0 0 4px;
+  margin-right: 0;
+  display:block;
+    
+}
+ body
+    {
+    font-family:"Open Sans","sans-serif";
+        font-size:16px;
+    }
+   
+</style>
+    <body>
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-globe"></span></a>
+        </div>
+<ul class="nav navbar-nav">
+      <li class="active"><a href="#"></a></li>
+    </ul>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="profile1.html">PROFILE1</a></li>
+             <li><a href="profile2.html">PROFILE2</a></li>
+             <li><a href="profile3.html">PROFILE3</a></li>
+             <li><a href="profile4.html">PROFILE4</a></li>
+            <li> <a href="profile5.html">PROFILE5</a></li>
+                        <li><a href="settings.html"><span class="glyphicon glyphicon-cog"></span> SETTINGS</a></li>
+
+            <li><a href="login.html"><span class="glyphicon glyphicon-log-out"></span> LOGOUT</a></li>
+        </ul>
+      </li>
+    </ul>
+          </div></div></nav>
+<div class="row">
+    <div class="col-md-2">
+<div class="nav-side-menu">
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+                <li class="active">
+                  <a href="dashboard.html">
+                  <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                  </a>
+                </li>
+
+                <li  data-toggle="collapse" data-target="#products" class="collapsed">
+                  <a href="#"><i class="fa fa-list fa-lg"></i>Report<span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li><a href="report1.html">Report1</a></li>
+                    <li><a href="report2.html">Report2</a></li>
+                    <li><a href="report3.html">Report3</a></li>
+                    <li><a href="report4.html">Report4</a></li>
+                    <li><a href="report5.html">Report5</a></li>
+                </ul>
+            </ul>
+     </div>
+</div>
+    </div>
+    <div class="col-md-offset-2 col-md-10">
+        <div class="row" style="margin-top:60px;">
+    <div class="col-md-2">
+    <h3>Settings</h3><br>
+   <ul class="nav nav-pills nav-stacked">
+  <li role="presentation"><a href="settings.html">Change Password</a></li>
+  <li role="presentation" class="active"><a href="payment.html">Payment</a></li>
+</ul></div>
+        <div class="col-md-10" style="display:block;">
+            <div class="panel panel-default">
+                <div class="panel-heading">Credit Card Details</div>
+            <div class="panel-body">
+            <form class="form-horizontal">
+            <div class="form-group">
+                 <label class="control-label col-md-3" for="card-number">Card number:</label>
+    <div class="col-md-9" style="max-width:500px;"> 
+        <input type="text" class="form-control" id="card-number"></div></div>
+                <div class="form-group">
+        <label class="col-sm-3 control-label" for="expiry-month">Expiration Date:</label>
+        <div class="col-sm-9">
+          <div class="row">
+            <div class="col-xs-3">
+              <select class="form-control col-sm-2" name="expiry-month" id="expiry-month">
+                <option>Month</option>
+                <option value="01">Jan (01)</option>
+                <option value="02">Feb (02)</option>
+                <option value="03">Mar (03)</option>
+                <option value="04">Apr (04)</option>
+                <option value="05">May (05)</option>
+                <option value="06">June (06)</option>
+                <option value="07">July (07)</option>
+                <option value="08">Aug (08)</option>
+                <option value="09">Sep (09)</option>
+                <option value="10">Oct (10)</option>
+                <option value="11">Nov (11)</option>
+                <option value="12">Dec (12)</option>
+              </select>
+            </div>
+            <div class="col-xs-3">
+              <select class="form-control" name="expiry-year">
+                <option value="13">2013</option>
+                <option value="14">2014</option>
+                <option value="15">2015</option>
+                <option value="16">2016</option>
+                <option value="17">2017</option>
+                <option value="18">2018</option>
+                <option value="19">2019</option>
+                <option value="20">2020</option>
+                <option value="21">2021</option>
+                  <option value="22">2022</option>
+                  <option value="23">2023</option>
+                  <option value="24">2024</option>
+                  <option value="25">2025</option> 
+                </select></div></div></div></div>
+            <div class="form-group">
+                <label class="control-label col-sm-3" for="cvv">Security Code:</label>
+                <div class="col-md-9" style="max-width:500px;">
+                <input type="password" class="form-control" id="card-holder-name"></div></div>
+                <div class="form-group">
+                <label class="control-label col-sm-3" for="card-holder-name">Name On Card:</label>
+                <div class="col-md-9" style="max-width:500px;" >
+                <input type="password" class="form-control" id="cvv"></div></div>
+            <div class="form-group"> 
+    <div class="col-sm-offset-3 col-sm-9">
+      <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+    </div>
+                </div></form></div></div></div></div>
+      <div class="panel panel-default">
+            <div class="panel-heading">Shipment Address</div>
+            <div class="panel-body">
+          <div class="row">
+                <div class="col-md-6">
+                    <h3>Billing Adddress</h3><br>
+                    <form action="payment.html">
+                        <div class="form-group">
+                            <label for="first-name">First Name:</label>
+                            <input type="text" class="form-control" id="firstName" style="max-width:400px;"></div>
+                        <div class="form-group">
+                        <label for="last-name">Last Name:</label>
+                            <input type="text" class="form-control" id="lastName" style="max-width:400px;"></div>
+                        <div class="form-group">
+                        <label for="address-line-1">Address Line 1</label>
+                        <input type="text" class="form-control" id="addressLine1" style="max-width:400px;"></div>
+                         <div class="form-group">
+                         <label for="address-line-2">Address Line 2</label>
+                        <input type="text" class="form-control" id="addressLine2" style="max-width:400px;"></div>
+                        <div class="form-group">
+                         <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" style="max-width:400px;"></div>
+                        <div class="form-group">
+                         <label for="postal-code">Postal Code</label>
+                        <input type="text" class="form-control" id="postalCode" style="max-width:400px;"></div>
+                        <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" class="form-control" id="country" style="max-width:400px;"></div>
+                        <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" class="form-control" id="state" style="max-width:400px;"></div>
+                        <div class="form-group">
+                         <label for="phone-no">Phone</label>
+                        <input type="text" class="form-control" id="phoneNo" style="max-width:400px;"></div>
+                        <div class="checKbox">
+                        <input type="checkbox" id="same" name="same" onclick="billingFunction()"/> <label for="same">Ship items to the above billing address</label></div>
+                    
+                    </form>
+              </div><div class="col-md-6">
+               <h3>Shipping Address</h3><br>
+                    <form action="payment.html">
+                        <div class="form-group">
+                            <label for="first-name">First Name:</label>
+                            <input type="text" class="form-control" id="sFirst" style="max-width:400px;"></div>
+                        <div class="form-group">
+                        <label for="last-name">Last Name:</label>
+                            <input type="text" class="form-control" id="sLast" style="max-width:400px;"></div>
+                        <div class="form-group">
+                        <label for="address-line-1">Address Line 1</label>
+                        <input type="text" class="form-control" id="sAddress1" style="max-width:400px;"></div>
+                         <div class="form-group">
+                         <label for="address-line-2">Address Line 2</label>
+                        <input type="text" class="form-control" id="sAddress2" style="max-width:400px;"></div>
+                        <div class="form-group">
+                         <label for="city">City</label>
+                        <input type="text" class="form-control" id="sCity" style="max-width:400px;"></div>
+                        <div class="form-group">
+                         <label for="postal-code">Postal Code</label>
+                        <input type="text" class="form-control" id="sCode" style="max-width:400px;"></div>
+                        <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" class="form-control" id="sCountry" style="max-width:400px;"></div>
+                        <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" class="form-control" id="sState" style="max-width:400px;"></div>
+                        <div class="form-group">
+                         <label for="phone-no">Phone</label>
+                            <input type="text" class="form-control" id="sPhone" style="max-width:400px;"></div>
+                        <div class="form-group">
+                              <button type="submit" class="btn btn-lg btn-primary">Place Order</button>
+</div>
+                    </form></div></div></div></div>  </div>
+    </div>
+        <script>
+function billingFunction(){
+  if (document.getElementById('same').checked){
+    document.getElementById('sFirst').value = document.getElementById('firstName').value;
+    document.getElementById('sLast').value = document.getElementById('lastName').value;
+ document.getElementById('sAddress1').value = document.getElementById('addressLine1').value;
+ document.getElementById('sAddress2').value = document.getElementById('addressLine2').value;
+    document.getElementById('sCity').value = document.getElementById('city').value;
+    document.getElementById('sCode').value = document.getElementById('postalCode').value;
+    document.getElementById('sCountry').value = document.getElementById('country').value;
+    document.getElementById('sState').value = document.getElementById('state').value;
+    document.getElementById('sPhone').value = document.getElementById('phoneNo').value;
+
+  }
+  else {
+  	document.getElementById('sFirst').value = '';
+    document.getElementById('sLast').value = '';
+    document.getElementById('sAddress1').value = '';
+    document.getElementById('sAddress2').value = '';
+    document.getElementById('sCity').value = '';
+    document.getElementById('sCode').value = '';
+    document.getElementById('sCountry').value = '';
+    document.getElementById('sState').value = '';
+    document.getElementById('sPhone').value = '';
+
+ }
+} 
+        </script></body></html>
+    
