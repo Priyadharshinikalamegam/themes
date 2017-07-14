@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+ </head>
     <style>
 
 body {
@@ -49,8 +50,7 @@ margin-top:20px;
     </style>
     <body>
         <div class="container">
-        <form action="signup.html" class="form-signin">
-           <form action="login.html" class="form-signin">       
+        <form action="signup.html" name="registration" class="form-signin">    
       <h2 style="text-align:center">SIGN UP</h2>
      FIRST NAME:
       <input type="text" class="form-control" name="firstname" placeholder="your first name" ><br>
@@ -62,12 +62,45 @@ margin-top:20px;
         PASSWORD:
       <input type="password" class="form-control"name="password" placeholder="password"><br>  
                CONFIRM PASSWORD:
-               <input type="password" class="form-control" name="password" placeholder="password"><br>
+               <input type="password" class="form-control" name="confirmpassword" placeholder="password"><br>
                <div class="row">
                <div class="col-md-6">
-                   <a href="#" class="btn btn-primary btn-lg" role="button">SIGN UP</a></div>
+                   <button type="submit" class="btn btn-primary btn-lg" role="button">Signup</button></div>
                <div class="col-md-6">
                    <a href="login.html" class="btn btn-primary btn-lg" role="button">Back To Login</a></div></div>
-            </form> </form></div>
+            </form> </div>
+       <script>
+        $(function() {
+  $("form[name='registration']").validate({
+    rules: {
+      firstname: "required",
+      lastname: "required",
+      username: {
+        required: true,
+        email: true
+      },
+      password: {
+        required: true,
+        minlength: 5
+      },
+         confirmpassword: {
+                    equalTo: "#password"
+                }
+    },
+    messages: {
+      firstname: "Please enter your firstname",
+      lastname: "Please enter your lastname",
+      password: {
+        required: "Please provide a password",
+        minlength: "Your password must be at least 5 characters long"
+      },
+      email: "Please enter a valid email address",
+        confirmpassword: "Enter confirm password same as password"
+    },
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+});</script> 
     </body>
 </html> 
